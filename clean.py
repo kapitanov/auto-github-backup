@@ -50,8 +50,8 @@ for obj in objects:
         sys.stderr.write('Won\'t remove \"%s\"\n' % obj['Key'])
         sys.stderr.flush()
 
-if keys_to_drop.count > 0:
-    if keys_to_drop.count < objects.count:
+if keys_to_drop.count() > 0:
+    if keys_to_drop.count() < objects.count():
         for key in keys_to_drop:
             sys.stderr.write('Removing \"%s\"\n' % key)
             sys.stderr.flush()
