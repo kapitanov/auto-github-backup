@@ -1,0 +1,18 @@
+version: "2.4"
+
+services:
+  github-backup:
+    build: .
+    image: kapitanov/auto-github-backup:latest
+    container_name: github-backup
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    env_file: .env
+    environment:
+      BACKUPS_DIR: /var/github-backup
+    volumes:
+      - ./var:/var/github-backup

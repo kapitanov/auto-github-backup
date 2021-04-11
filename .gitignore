@@ -1,0 +1,4 @@
+.vscode/settings.json
+.env
+!var/.gitkeep
+var/*
