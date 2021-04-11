@@ -14,6 +14,9 @@ RUN echo "timezone=${TIME_ZONE}" && \
 COPY upload.py /opt/github-backup/upload.py
 RUN chmod +x /opt/github-backup/upload.py
 
+COPY clean.py /opt/github-backup/clean.py
+RUN chmod +x /opt/github-backup/clean.py
+
 COPY entrypoint.sh /opt/github-backup/entrypoint.sh
 RUN chmod +x /opt/github-backup/entrypoint.sh
 
