@@ -21,4 +21,5 @@ COPY entrypoint.sh /opt/github-backup/entrypoint.sh
 RUN chmod +x /opt/github-backup/entrypoint.sh
 
 ENV BACKUPS_DIR=/var/github-backup
+WORKDIR /opt/github-backup
 CMD /opt/github-backup/entrypoint.sh run
