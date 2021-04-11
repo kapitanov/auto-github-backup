@@ -1,5 +1,9 @@
 # auto-github-backup
 
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/kapitanov/auto-github-backup?style=flat-square)](https://hub.docker.com/r/kapitanov/auto-github-backup/builds)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kapitanov/auto-github-backup?style=flat-square)](https://hub.docker.com/r/kapitanov/auto-github-backup)
+![GitHub](https://img.shields.io/github/license/kapitanov/auto-github-backup?style=flat-square)
+
 This container makes a backup daily of your GitHub repositories, uploads them to S3 object storage and keeps up to defined number of backups.
 
 Under the hood it uses:
