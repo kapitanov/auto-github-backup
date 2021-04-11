@@ -47,8 +47,6 @@ __upload_backup() {
         FILENAME="$BACKUPS_DIR/$NAME-$(date "+%Y%m%d-%H%M%S").tar.gz"
         printf "Compressing backup of \"$NAME\" into \"$FILENAME\"\n"
         tar -zcf $FILENAME $DIR
-        FILESIZE=$(ls -s --block-size=1048576 "$FILENAME" | cut -d' ' -f1)
-        printf "Got ${FILESIZE}Mb\n"
     done
 
     for FILE in $(ls $BACKUPS_DIR/*.tar.gz); do
