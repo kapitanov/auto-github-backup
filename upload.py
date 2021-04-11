@@ -4,12 +4,7 @@
 import os
 import sys
 import threading
-import time
-import requests
 import boto3
-import glob
-from requests.auth import HTTPBasicAuth
-from datetime import datetime, timedelta, timezone
 
 
 def env_var(key, default=None, required=True):

@@ -4,7 +4,7 @@ RUN apk add --update --no-cache bash tzdata git git-lfs python3 py-pip tzdata
 RUN pip3 install github-backup && github-backup -v
 
 COPY requirements.txt /opt/github-backup/requirements.txt
-RUN pip install -r /opt/github-backup/requirements.txt
+RUN pip3 install -r /opt/github-backup/requirements.txt
 
 ARG TIME_ZONE=UTC
 RUN echo "timezone=${TIME_ZONE}" && \
