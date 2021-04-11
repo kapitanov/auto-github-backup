@@ -99,8 +99,6 @@ run_scheduler() {
 
 print_help() {
     printf "\n"
-    printf "This script builds services as docker images.\n"
-    printf "\n"
     printf "COMMANDS:\n"
     printf "  ./entypoint.sh backup   - run backup routine once and exit\n"
     printf "  ./entypoint.sh run      - run backup scheduler\n"
