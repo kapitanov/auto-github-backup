@@ -107,7 +107,14 @@ print_help() {
     printf "  -h, --help              - print help and exit\n"
     printf "\n"
     printf "ENV VARIABLES: \n"
-    printf "  VERSION                 - (optional) application version\n"
+    printf "  GITHUB_USER             - (required) Comma-separated list of GitHub user names\n"
+    printf "  GITHUB_ACCESS_TOKEN     - (required) GitHub access token\n"
+    printf "  S3_ACCESS_KEY           - (required) Access key for S3\n"
+    printf "  S3_SECRET_KEY           - (required) Secret key for S3\n"
+    printf "  S3_BUCKET               - (required) S3 bucket name\n"
+    printf "  S3_URL                  - (optional) S3 service URL (not needed for AWS S3)\n"
+    printf "  S3_PREFIX               - (optional) S3 filename prefix (e.g. \"backups/github/\")\n"
+    printf "  BACKUP_KEEP_DAYS        - (optional, default \"30\") S3 filename prefix (e.g. \"backups/github/\")\n"
 }
 
 while [ "$1" != "" ]; do
