@@ -92,6 +92,7 @@ run_scheduler() {
     while :; do
         backup_routine
         printf "Sleep for 1 day\n"
+        sleep 1d
     done
 }
 
