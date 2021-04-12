@@ -41,7 +41,9 @@ sys.stderr.flush()
 objects = s3client.list_objects(
     Bucket=S3_BUCKET, Prefix=S3_FILE_MASK, Delimiter='/')['Contents']
 keys_to_drop = []
+total_count = 0
 for obj in objects:
+    total_count = total_count + 1 
     if obj['LastModified'] < start_date:
         sys.stderr.write('Marking \"%s\" for removal\n' % obj['Key'])
         sys.stderr.flush()
@@ -51,7 +53,7 @@ for obj in objects:
         sys.stderr.flush()
 
 if keys_to_drop.count() > 0:
-    if keys_to_drop.count() < objects.count():
+    if keys_to_drop.count() < total_count:
         for key in keys_to_drop:
             sys.stderr.write('Removing \"%s\"\n' % key)
             sys.stderr.flush()
