@@ -1,6 +1,7 @@
 FROM alpine:3.22
 
 RUN apk add --update --no-cache bash tzdata git git-lfs python3 py-pip tzdata
+RUN pip3 install --break-system-packages github-backup==0.50.3 && github-backup -v
 
 COPY requirements.txt /opt/github-backup/requirements.txt
 RUN pip3 install --break-system-packages -r /opt/github-backup/requirements.txt
